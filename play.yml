@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: "build the image"
+      shell: "docker build -t app /home/dockeradmin"
+    - name: "build the image"
+      shell: "docker run -d --name gokulapp -p 8080:8080 app"
